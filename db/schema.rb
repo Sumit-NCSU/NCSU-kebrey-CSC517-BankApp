@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208004257) do
+ActiveRecord::Schema.define(version: 20170208011036) do
+
+  create_table "Users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password"
+    t.string   "email"
+    t.string   "user_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "account_number"
@@ -18,15 +27,6 @@ ActiveRecord::Schema.define(version: 20170208004257) do
     t.decimal  "balance"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "email"
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
