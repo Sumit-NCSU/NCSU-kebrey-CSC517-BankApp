@@ -3,7 +3,7 @@ class CreateAccounts < ActiveRecord::Migration[5.0]
     create_table :accounts do |t|
       t.numeric :account_number
       t.string :status
-      t.decimal(10,2) :balance
+      t.decimal :balance
 
       t.timestamps
     end
