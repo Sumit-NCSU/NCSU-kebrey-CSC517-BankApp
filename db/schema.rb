@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208004257) do
+ActiveRecord::Schema.define(version: 20170208012101) do
 
   create_table "accounts", force: :cascade do |t|
     t.decimal  "account_number"
@@ -18,6 +18,26 @@ ActiveRecord::Schema.define(version: 20170208004257) do
     t.decimal  "balance"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.integer "user_1_id"
+    t.integer "user_2_id"
+    t.index ["user_1_id"], name: "index_friends_on_user_1_id"
+    t.index ["user_2_id"], name: "index_friends_on_user_2_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.boolean  "approval_status"
+    t.boolean  "active_status"
+    t.decimal  "amount"
+    t.datetime "effective_date"
+    t.integer  "from_account_id"
+    t.integer  "to_account_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["from_account_id"], name: "index_transactions_on_from_account_id"
+    t.index ["to_account_id"], name: "index_transactions_on_to_account_id"
   end
 
   create_table "users", force: :cascade do |t|

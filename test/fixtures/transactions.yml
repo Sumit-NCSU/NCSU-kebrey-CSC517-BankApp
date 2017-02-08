@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  approval_status: false
+  active_status: 
+  amount: 
+  created_at: 2017-02-07 20:21:01
+  effective_date: 2017-02-07 20:21:01
+
+two:
+  approval_status: false
+  active_status: 
+  amount: 
+  created_at: 2017-02-07 20:21:01
+  effective_date: 2017-02-07 20:21:01
