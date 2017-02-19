@@ -1,0 +1,26 @@
+<h1>User Transactions</h1>
+
+<table>
+  <tr>
+    <th>Transaction Date</th>
+    <th>Transaction Type</th>
+    <th>Amount</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.effective_date %></td>
+        <td><%= transaction.txn_type %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.status %></td>
+        <% if transaction.status = 'Pending' %>
+          <td>Cancel</td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Back', users_path %>

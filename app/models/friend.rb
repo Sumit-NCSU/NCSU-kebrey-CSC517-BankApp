@@ -1,4 +1,4 @@
 class Friend < ApplicationRecord
-  belongs_to :user_1, :class_name => 'User'
-  belongs_to :user_2, :class_name => 'User'
+  has_one :user1, :foreign_key => 'user_id', :class_name => 'User'
+  has_one :user2, :foreign_key => 'user_id', :class_name => 'User'
 end
