@@ -9,13 +9,11 @@ class SessionsController < ApplicationController
   def create
     authorized_user = User.authenticate(params[:login_email],params[:login_password])
     if authorized_user
-      printf 'Success'
       session[:user_id] = authorized_user.id
       flash[:notice] = "Welcome, you are logged in as #{authorized_user.name}"
       flash[:color] = 'valid'
       redirect_to(:action => 'home')
     else
-      printf 'Failed'
       flash[:notice] = 'Invalid Username or Password'
       flash[:color] = 'invalid'
       render 'new'

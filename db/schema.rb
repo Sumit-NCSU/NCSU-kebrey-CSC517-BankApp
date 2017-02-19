@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 20170219081503) do
 
   create_table "accounts", force: :cascade do |t|
-    t.string   "acNum"
+    t.string   "account_number"
     t.string   "status"
-    t.decimal  "balance",    precision: 7, scale: 2
+    t.decimal  "balance",        precision: 7, scale: 2
     t.integer  "user_id"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170219081503) do
     t.string   "name"
     t.string   "email"
     t.string   "password"
-    t.boolean  "isAdmin"
+    t.boolean  "is_admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -31,7 +31,7 @@ class User < ApplicationRecord
   end
 
   def match_password(login_password='')
-    encrypted_password == endDigest::SHA1.hexdigest(login_password)
+    encrypt_password == Digest::SHA1.hexdigest(login_password)
   end
 
 end
