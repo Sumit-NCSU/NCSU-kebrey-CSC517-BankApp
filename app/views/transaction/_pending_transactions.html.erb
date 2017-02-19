@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Approve</th>
+    <th>Decline</th>
+  </tr>
+
+  <% if !@transactions.nil? then @transactions.each do |txn| %>
+          <tr>
+            <td>txn.amount</td>
+            <td>txn.from_account_id</td>
+            <td>txn.to_account_id</td>
+            <td><%= link_to 'Approve', txn %></td>
+            <td><%= link_to 'Decline', txn %></td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

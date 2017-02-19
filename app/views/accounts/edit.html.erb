@@ -1,0 +1,12 @@
+<h1>Editing account</h1>
+
+<%= render 'form' %>
+
+<b>Pending Sent Transactions</b>
+<%= render 'transaction/pending_transactions' , :transactions => @account.get_pending_sent_transactions %>
+
+<b>Pending Received Transactions</b>
+<%= render 'transaction/pending_transactions' , :transactions => @account.get_pending_received_transactions %>
+
+<%= link_to 'Show', @account %> |
+<%= link_to 'Back', accounts_path %>

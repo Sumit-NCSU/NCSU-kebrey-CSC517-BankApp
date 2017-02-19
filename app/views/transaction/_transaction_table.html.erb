@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Amount</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Active Status</th>
+    <th>Approval Status</th>
+    <th>Start Date</th>
+    <th>Effective Date</th>
+  </tr>
+
+  <% if !@transactions.nil? then @transactions.each do |txn| %>
+          <tr>
+            <td>txn.amount</td>
+            <td>txn.from_account_id</td>
+            <td>txn.to_account_id</td>
+            <td>txn.active_status</td>
+            <td>txn.approval_status</td>
+            <td>txn.created_at</td>
+            <td>txn.effective_date</td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>
