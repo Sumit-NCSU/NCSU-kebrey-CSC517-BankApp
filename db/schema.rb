@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170219081503) do
 
   create_table "accounts", force: :cascade do |t|
@@ -21,34 +20,6 @@ ActiveRecord::Schema.define(version: 20170219081503) do
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
-=======
-ActiveRecord::Schema.define(version: 20170219190740) do
-
-  create_table "Users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "email"
-    t.string   "user_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "accounts", force: :cascade do |t|
-    t.integer  "account_number"
-    t.string   "status"
-    t.decimal  "balance",        default: "0.0"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
-  create_table "accounts_users", force: :cascade do |t|
-    t.integer  "account_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_accounts_users_on_account_id"
-    t.index ["user_id"], name: "index_accounts_users_on_user_id"
->>>>>>> ec6af02ef9eb1c857073813e97bee937977ef9a2
   end
 
   create_table "friends", force: :cascade do |t|
@@ -74,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170219190740) do
     t.index ["to_account_id"], name: "index_transactions_on_to_account_id"
   end
 
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -84,6 +54,4 @@ ActiveRecord::Schema.define(version: 20170219190740) do
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> ec6af02ef9eb1c857073813e97bee937977ef9a2
 end
