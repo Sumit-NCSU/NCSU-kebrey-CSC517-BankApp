@@ -1,20 +1,22 @@
-<h1>User Account Details</h1>
+<h1>Manage Accounts</h1>
 
 <table>
-
   <tr>
     <th>Account Number</th>
-    <th>Status</th>
-    <th>Balance</th>
+    <th>Link to View</th>
   </tr>
 
-  <% @accounts.each do |account| %>
-    <tr>
-      <td><%= account.account_number %></td>
-      <td><%= account.status %></td>
-      <td><%= account.balance %></td>
-    </tr>
+  <% if !@accounts.nil? then @accounts.each do |account| %>
+          <tr>
+            <td><%= account.account_number %></td>
+            <td><%= link_to 'Show', account %></td>
+          </tr>
+      <% end %>
   <% end %>
 </table>
 
+<br />
+
+<%= link_to 'New Account', new_account_path %> 
+<br/>
 <%= link_to 'Back', users_path%>
