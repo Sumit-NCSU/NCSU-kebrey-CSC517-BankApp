@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where(["name = ? or email = ?","#{search}".to_i,"#{search}".to_i])
+      self.where(["name LIKE ? or email LIKE ?","#{search}".to_i,"#{search}".to_i])
     else
       nil
     end

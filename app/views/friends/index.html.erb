@@ -1,6 +1,6 @@
 <h1>Friend List</h1>
 
-<table>
+<table border="1">
   <tr>
     <th>Friend Name</th>
     <th>Actions</th>
@@ -8,11 +8,13 @@
   <% @friends.each do |friend| %>
       <tr>
         <td><%= friend.user2_id %></td>
-        <td>Borrow</td>
+        <td>Transfer</td>
       </tr>
   <% end %>
 </table>
 
+<%= link_to 'Add New Friends', friends_search_path %>
+<br>
 <%= link_to 'Borrow Request', users_path %>
 <br>
 <%= link_to 'Approve Borrow Request', users_path %>

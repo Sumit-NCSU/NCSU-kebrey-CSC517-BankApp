@@ -9,4 +9,13 @@ class FriendsController < ApplicationController
 	
 	def new
 	end
+
+	def search
+		if params[:search]
+			@users = User.search(params[:search]).order('name')
+		else
+			return nil
+    end
+    redirect_to 'friends/search'
+	end
 end

@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   end
 
   def home
-    redirect_to :controller => 'users', :action => 'index'
+    redirect_to :controller => 'sessions', :action => 'index'
   end
 
   def profile

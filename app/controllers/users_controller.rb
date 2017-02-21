@@ -25,6 +25,16 @@ class UsersController < ApplicationController
 		redirect_to :controller => 'sessions', :action => 'create'
 	end
 
+	# GET /users/1/edit
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		redirect_to users_path, notice: 'Profile successfully updated.'
+	end
+
 	def user_params
 		params.require(:user).permit(:name, :email, :password)
 	end
