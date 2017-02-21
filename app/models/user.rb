@@ -14,4 +14,12 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    if search
+      self.where(["name = ? or email = ?","#{search}".to_i,"#{search}".to_i])
+    else
+      nil
+    end
+  end
+
 end
