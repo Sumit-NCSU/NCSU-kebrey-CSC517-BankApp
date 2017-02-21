@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'admin/manage_transactions', to: 'transaction#manage'
   
   get 'sessions/new'
-
+  get 'home' => 'sessions#home'
   get 'signup' => 'users#new'
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'

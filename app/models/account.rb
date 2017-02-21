@@ -2,7 +2,7 @@ class Account < ApplicationRecord
 	STATUS_OPTIONS = %w(active closed)
 	#attr_accessible :account_number, :balance, :status, :users, :to_transactions, :from_transactions
 	#attr_accessor :account_number, :balance, :status, :users
-	has_and_belongs_to_many :users
+	belongs_to :user
 	has_many :received_transactions, :class_name => 'Transaction', :foreign_key => 'to_account'
 	has_many :sent_transactions, :class_name => 'Transaction', :foreign_key => 'from_account'
 	
