@@ -15,7 +15,7 @@ class Account < ApplicationRecord
 	private def generate_account_number
 	self.account_number = loop do
 		random_number = rand(100000000...1000000000)
-		break random_number # unless Account.exists?(account_number: random_number)
+		break random_number unless Account.exists?(account_number: random_number)
 	end
 	end
 	
