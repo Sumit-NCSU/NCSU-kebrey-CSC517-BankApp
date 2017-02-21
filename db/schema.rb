@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20170219081503) do
   create_table "accounts", force: :cascade do |t|
     t.string   "account_number"
     t.string   "status"
-    t.decimal  "balance",        precision: 7, scale: 2
+    t.decimal  "balance",        precision: 7, scale: 2, default: "0.0"
     t.integer  "user_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
