@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'home' => 'sessions#index'
   get 'signup' => 'users#new'
+  get 'admin/new' => 'users#new_admin'
+  post 'admin/new' => 'users#create_admin'
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   get 'logout' => 'sessions#destroy'
