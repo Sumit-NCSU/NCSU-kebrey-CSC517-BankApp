@@ -12,11 +12,11 @@ class TransactionsController < ApplicationController
 	end
 
 	def deposits
-
+		@transaction = Transaction.deposit
 	end
 
 	def withdraws
-
+		@transaction = Transaction.withdraw
 	end
 	
 	def approve

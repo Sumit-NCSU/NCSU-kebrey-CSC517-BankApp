@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   get 'logout' => 'sessions#destroy'
+  get 'withdraw' => 'transaction#'
+  get 'deposit' =>  'transaction#'
   delete 'logout' => 'sessions#destroy'
 
   get 'friends/search' => 'friends#search'
