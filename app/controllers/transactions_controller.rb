@@ -21,10 +21,11 @@ class TransactionsController < ApplicationController
 		render 'borrow'
 	end
 
-	def lend
-		@transaction = Transaction.new
-		render 'lend'
-	end
+  def lend
+    @transaction = Transaction.new
+    render 'lend'
+  end
+
 
 	def withdraw
 		@transaction = Transaction.new
