@@ -1,8 +1,14 @@
-<h2>Welcome <%= @users[0].name %></h2>
+<% authUser = User.find(session[:user_id]) %>
+
+<% if authUser.is_admin %>
 
 <!--  <li> #<%#= #link_to 'Deposit', :controller => :transactions, :action => :deposits  %> </li> -->
 <!--  <li> #<%#= #link_to 'Withdraw', :controller => :transactions, :action => :withdraws  %> </li> -->
+<% if @showing_admins %>
+<h1>Manage Admins</h1>
+<% else %>
 <h1>Manage Users</h1>
+<% end %>
 
 <table class="table table-hover">
   <tr>
@@ -27,8 +33,7 @@
 
 <%= link_to 'New Account', new_account_path %>
 <br/>
-<%= link_to 'Back', users_path%>
 
+<% end %>
 
-
-<%= link_to 'Logout', :controller => :sessions, :action => :destroy %>
+<%= link_to 'Back', home_path%>

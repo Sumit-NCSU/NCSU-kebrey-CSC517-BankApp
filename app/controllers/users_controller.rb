@@ -1,8 +1,16 @@
 class UsersController < ApplicationController
   before_action :save_login_state, :only => [:new, :create]
 
-	def index
-		@users = User.all
+	def index_users
+		@users = User.where({is_admin:false})
+		@showing_admins = false
+		render 'index'
+	end
+
+	def index_admins
+		@users = User.where({is_admin:true})
+		@showing_admins = true
+		render 'index'
 	end
 	
 	def show

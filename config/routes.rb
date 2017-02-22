@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
   #Admin navigation
-  get 'admin/manage_admins', to: 'users#manage_admins'
-  get 'admin/manage_accounts', to: 'accounts#index'
-  get 'admin/manage_users', to: 'users#manage_users'
-  get 'admin/manage_transactions', to: 'transactions#manage'
+  #get 'admin/manage_admins', to: 'users#manage_admins'
+  #get 'admin/manage_accounts', to: 'accounts#index'
+  get 'users', to: 'users#index_users'
+  get 'admins', to: 'users#index_admins'
   
   get 'sessions/new'
-  get 'home' => 'sessions#home'
+  get 'home' => 'sessions#index'
   get 'signup' => 'users#new'
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
