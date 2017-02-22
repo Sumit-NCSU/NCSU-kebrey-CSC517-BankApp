@@ -13,7 +13,7 @@
   <h3>Account: <%=:account_number%></h3>
   <div class="field">
     <%= f.label :user%><br />
-    <%= f.select :user, options_for_select(User.all.collect {|p| [ p.name, p.id ] }), {}, {:multiple => false, :class => "user-select" } %>
+    <%= f.select :user, options_for_select(User.allPlain.collect {|p| [ p.name, p.id ] }), {}, {:multiple => false, :class => "user-select" } %>
   </div>
   <div class="field">
     <%= f.label :status %><br />
