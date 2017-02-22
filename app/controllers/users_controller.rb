@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 		redirect_to :controller => 'users', :action => 'index_admins'
 	end
 
+
 	# GET /users/1/edit
 	def edit
 		@user = User.find(params[:id])
@@ -57,7 +58,12 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		redirect_to users_path, notice: 'Profile successfully updated.'
+		if @user.update_attributes(user_params)
+			redirect_to users_path, notice: 'User profile successfully updated.'
+		else
+			render action:'edit'
+		end
+
 	end
 
 	def destroy
