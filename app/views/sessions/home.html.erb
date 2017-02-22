@@ -1,0 +1,23 @@
+<% authUser = User.find(session[:user_id]) %>
+<h2>Welcome <%= authUser.name %></h2>
+
+<ul>
+<% if authUser.is_admin %>
+
+  <li><%= link_to 'Manage Admins', users_path %></li>
+  <li><%= link_to 'Manage Users', users_path %></li>
+  <li><%= link_to 'Manage Accounts', accounts_path %></li>
+  <li><%= link_to 'Manage Transactions', transactions_path  %></li>
+
+<% else %>
+
+  <li><%= link_to 'Accounts', accounts_path %></li>
+  <li><%= link_to 'Friends', friends_path  %></li>
+  <li><%= link_to 'Transactions', transactions_path  %></li>
+  <!--  <li> #<%#= #link_to 'Deposit', :controller => :transactions, :action => :deposits  %> </li> -->
+  <!--  <li> #<%#= #link_to 'Withdraw', :controller => :transactions, :action => :withdraws  %> </li> -->
+
+<% end %>
+</ul>
+
+<%= link_to 'Logout', :controller => :sessions, :action => :destroy %>

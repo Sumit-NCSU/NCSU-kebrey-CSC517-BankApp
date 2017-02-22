@@ -1,10 +1,8 @@
-<h2>Welcome <%= @users[0].name %></h2>
-<ul>
-  <li><%= link_to 'Accounts', accounts_path %></li>
-  <li><%= link_to 'Friends', friends_path  %></li>
-  <li><%= link_to 'Transactions', transactions_path  %></li>
-  <!--  <li> #<%#= #link_to 'Deposit', :controller => :transactions, :action => :deposits  %> </li> -->
-  <!--  <li> #<%#= #link_to 'Withdraw', :controller => :transactions, :action => :withdraws  %> </li> -->
-</ul>
+<% authUser = User.find(session[:user_id]) %>
+<% if authUser.is_admin %>
 
-<%= link_to 'Logout', :controller => :sessions, :action => :destroy %>
+    TODO: list users
+
+<% end %>
+
+<%= link_to 'Back', :controller => :sessions, :action => :home %>

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = authorized_user.id
       flash[:notice] = "Welcome, you are logged in as #{authorized_user.name}"
       flash[:color] = 'valid'
-      redirect_to :controller => 'users', :action => 'index'
+      redirect_to :controller => 'sessions', :action => 'home'
     else
       flash[:notice] = 'Invalid Username or Password'
       flash[:color] = 'invalid'
@@ -25,15 +25,15 @@ class SessionsController < ApplicationController
     redirect_to :action => 'create'
   end
 
-  def home
-    redirect_to :controller => 'users', :action => 'index'
-  end
-
   def profile
 
   end
 
   def setting
+
+  end
+
+  def home
 
   end
 end
