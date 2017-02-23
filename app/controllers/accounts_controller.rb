@@ -45,4 +45,6 @@ class AccountsController < ApplicationController
 			render action:'show'
 		end
 	end
+
+
 end
