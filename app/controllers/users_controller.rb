@@ -28,10 +28,10 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			flash[:notice] = 'User created successfully'
+			flash[:notice] = 'User was created successfully.'
 			flash[:color] = 'valid'
 		else
-			flash[:notice] = 'User not created'
+			flash[:notice] = 'User not created.'
 			flash[:color] = 'invalid'
 		end
 		redirect_to :controller => 'sessions', :action => 'create'
