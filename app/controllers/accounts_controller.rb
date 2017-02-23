@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+	before_action :authenticate_user
+
 	def account_params
 		params.require(:account).permit(:account_number, :status, :balance, :user_id)
 	end
