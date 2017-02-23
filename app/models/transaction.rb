@@ -1,6 +1,6 @@
 class Transaction < ApplicationRecord
-  belongs_to :form_account, :foreign_key => 'account_number', :class_name => 'Account'
-  belongs_to :to_account, :foreign_key => 'account_number', :class_name => 'Account'
+  belongs_to :form_account, :foreign_key => 'account_number', :class_name => 'Account', optional: true
+  belongs_to :to_account, :foreign_key => 'account_number', :class_name => 'Account', optional:true
 
   TYPES = %w(deposit withdrawal send borrow)
   STATUS_OPTIONS = %w(pending approved)
