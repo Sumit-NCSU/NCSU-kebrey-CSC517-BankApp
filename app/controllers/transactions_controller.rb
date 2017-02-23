@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+	before_action :authenticate_user
 	def transaction_params_deposit
 		params.require(:transaction).permit(:to_account_id, :amount)
 	end
@@ -6,7 +7,6 @@ class TransactionsController < ApplicationController
 	def transaction_params_withdraw
 		params.require(:transaction).permit(:form_account_id, :amount)
 	end
-
 	def index
 		@transactions = Transaction.all
 	end
