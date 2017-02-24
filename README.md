@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Video Screencast
 
-Things you may want to cover:
+Watch the below Video for instructions on how to use the application:
 
-* Ruby version
+Demo of Program 1: Bank Application
 
-* System dependencies
+    Ruby version 2.3.3
 
-* Configuration
+    Rails version 5.0.1
 
-* Database creation
+    Configuration Files:
+        /config/database.yml
+        Gemfile
 
-* Database initialization
+    Database creation:
+        PostgreSQL on Heroku Production.
+        Sqlite3 on local Development and Testing.
 
-* How to run the test suite
+    Database initialization is done through the following files after migrating the database:
+        /db/seed.rb
 
-* Services (job queues, cache servers, search engines, etc.)
+    How to run the test suite:
+        TODO: Pending
 
-* Deployment instructions
+    Services (job queues, cache servers, search engines, etc.): NA
 
-* ...
+    Deployment instructions: Deploy on Heroku using the following Guide:
+        https://devcenter.heroku.com/articles/getting-started-with-rails5#local-workstation-setup
