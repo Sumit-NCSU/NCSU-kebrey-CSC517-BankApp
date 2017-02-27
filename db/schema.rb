@@ -20,35 +20,32 @@ ActiveRecord::Schema.define(version: 20170221002902) do
   end
 
   create_table "accounts", force: :cascade do |t|
-    t.string   "account_number"
     t.string   "status"
-    t.decimal  "balance",        precision: 7, scale: 2, default: "0.0"
+    t.decimal  "balance",    precision: 7, scale: 2, default: "0.0"
     t.integer  "user_id"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "friends", force: :cascade do |t|
-    t.integer  "user1_id"
-    t.integer  "user2_id"
+    t.integer  "friend1_id"
+    t.integer  "friend2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user1_id"], name: "index_friends_on_user1_id"
-    t.index ["user2_id"], name: "index_friends_on_user2_id"
   end
 
   create_table "transactions", force: :cascade do |t|
     t.string   "txn_type"
     t.decimal  "amount",          precision: 7, scale: 2
-    t.integer  "form_account_id"
+    t.integer  "from_account_id"
     t.integer  "to_account_id"
     t.datetime "start_date"
     t.datetime "effective_date"
     t.string   "status"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
-    t.index ["form_account_id"], name: "index_transactions_on_form_account_id"
+    t.index ["from_account_id"], name: "index_transactions_on_from_account_id"
     t.index ["to_account_id"], name: "index_transactions_on_to_account_id"
   end
 

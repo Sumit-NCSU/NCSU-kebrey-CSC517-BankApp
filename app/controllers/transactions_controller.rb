@@ -1,11 +1,11 @@
 class TransactionsController < ApplicationController
 	before_action :authenticate_user
 	def transaction_params_deposit
-		params.require(:transaction).permit(:to_account, :amount)
+		params.require(:transaction).permit(:to_account_id, :amount)
 	end
 
 	def transaction_params_withdraw
-		params.require(:transaction).permit(:from_account, :amount)
+		params.require(:transaction).permit(:from_account_id, :amount)
 	end
 	def index
 		@transactions = Transaction.all
@@ -34,10 +34,12 @@ class TransactionsController < ApplicationController
 
 	def create_deposit
 		@transaction = Transaction.new(transaction_params_deposit)
-		@transaction.from_account = '-1'
+		@transaction.from_account_id = nil
 		@transaction.txn_type = 'deposit'
 		@transaction.status = 'pending'
-		if @transaction.save
+		account = Account.find(transaction_params_deposit[:to_account_id])
+		account.add_balance transaction_params_deposit[:amount].to_d
+		if @transaction.save && account.save
 			flash[:notice] = 'Deposit was successful'
 			redirect_to :action => 'deposit'
 		else
