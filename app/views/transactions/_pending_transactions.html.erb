@@ -10,8 +10,8 @@
   <% if !@transactions.nil? then @transactions.each do |txn| %>
           <tr>
             <td><%= txn.amount %></td>
-            <td><%= txn.to_account_id %></td>
             <td><%= txn.from_account_id %></td>
+            <td><%= txn.to_account_id %></td>
             <td>
               <%= link_to 'Approve', {:controller => :transactions, :action => :approve,
                                               :txn_id => txn.id }, {:method => :put} %>

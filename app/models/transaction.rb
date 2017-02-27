@@ -24,7 +24,8 @@ class Transaction < ApplicationRecord
     if txn_type != 'withdrawal'
         to_account.add_balance amount.to_d
         to_account.save
-    elsif txn_type != 'deposit'
+    end
+    if txn_type != 'deposit'
         from_account.subtract_balance amount.to_d
         from_account.save
     end

@@ -9,6 +9,9 @@ User.create(id: '0', name: 'Admin', email: 'admin@ncsu.edu', password: 'password
 User.create(id: '1', name: 'User', email: 'user@ncsu.edu', password: 'password', is_admin: 0)
 User.create(id: '2', name: 'Another', email: 'user2@ncsu.edu', password: 'password', is_admin: 0)
 
+Friend.create(friend1_id: '2', friend2_id:'1')
+Friend.create(friend1_id: '1', friend2_id:'2')
+
 account1 = Account.create(id: '121212121', user_id: 1, status:'active', balance:1000)
 account2 = Account.create(id: '343434343', user_id: 2, status:'active', balance:2000)
 
