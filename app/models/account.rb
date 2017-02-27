@@ -3,8 +3,10 @@ class Account < ApplicationRecord
 	#attr_accessible :balance, :status, :users, :to_transactions, :from_transactions
 	#attr_accessor balance, :status, :users
 	belongs_to :user
-	has_many :received_transactions, :class_name => 'Transaction', :foreign_key => 'to_account'
-	has_many :sent_transactions, :class_name => 'Transaction', :foreign_key => 'from_account'
+	has_many :received_transactions, class_name: "Transaction",
+					 foreign_key: "to_account"
+	has_many :sent_transactions, class_name: "Transaction",
+					 foreign_key: "from_account"
 	
 	before_create :generate_id
 	
