@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'login'   => 'sessions#new'
   post 'login'   => 'sessions#create'
   get 'logout' => 'sessions#destroy'
+  get 'manage' => 'transactions#manage'
   get 'withdraw' => 'transactions#withdraw'
   get 'deposit' =>  'transactions#deposit'
   get 'borrow' => 'transactions#borrow'
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
   post 'deposit' => 'transactions#create_deposit'
   get 'withdraw' => 'transactions#create_withdraw'
   post 'withdraw' => 'transactions#create_withdraw'
+  put 'approve' => 'transactions#approve'
+  put 'decline' => 'transactions#decline'
   get 'friends/search' => 'friends#search'
 
   resources :users

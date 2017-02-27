@@ -37,9 +37,7 @@ class TransactionsController < ApplicationController
 		@transaction.from_account_id = nil
 		@transaction.txn_type = 'deposit'
 		@transaction.status = 'pending'
-		account = Account.find(transaction_params_deposit[:to_account_id])
-		account.add_balance transaction_params_deposit[:amount].to_d
-		if @transaction.save && account.save
+		if @transaction.save
 			flash[:notice] = 'Deposit was successful'
 			redirect_to :action => 'deposit'
 		else
@@ -65,9 +63,13 @@ class TransactionsController < ApplicationController
 
 	def create_withdraw
 		@transaction = Transaction.new(transaction_params_withdraw)
-		@transaction.to_account = '-1'
+		@transaction.to_account_id = nil
 		@transaction.txn_type = 'withdrawal'
-		@transaction.status = 'pending'
+		if transaction_params_withdraw[:amount].to_d > 1000
+			@transaction.status = 'pending'
+		elsif
+			@transaction.approve
+		end
 		if @transaction.save
 			flash[:notice] = 'Withdraw was successful'
 			redirect_to :action => 'withdraw'
@@ -77,14 +79,22 @@ class TransactionsController < ApplicationController
 		end
 	end
 
-	def approve
-
-	end
-	def decline
-
-	end
 	def manage
 		@transactions = Transaction.all_pending
+	end
+
+	def approve
+		if Transaction.find(params[:txn_id]).approve
+			flash[:notice] = 'Transaction approved'
+			redirect_to :action => 'manage'
+		end
+	end
+
+	def decline
+		if Transaction.find(params[:txn_id]).decline
+			flash[:notice] = 'Transaction declined'
+			redirect_to :action => 'manage'
+		end
 	end
 
 end
