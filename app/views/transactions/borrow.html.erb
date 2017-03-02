@@ -26,27 +26,17 @@
         <b>Select an account to borrow from: </b>&nbsp;&nbsp;&nbsp;&nbsp;
         <!-- Display list of friends account ids for form_account_id-->
         <% if @friends_accounts %>
-            <% @friends_accounts.each do |friend| %>
-                <select id="from_account_id">
-                  <option> <%= User.find_by(id: friend.user_id).name %>&nbsp&nbsp<%= friend.id %> </option>
-                </select>
-            <%end %>
+        <%= f.collection_select :from_account_id, @friends_accounts, :id , :id %>
         <% else %>
-            N/A
+          N/A
         <% end %>
       </div>
-
-
       <hr>
       <div class="field">
         <b>Select an account to transfer to: </b>&nbsp;&nbsp;&nbsp;&nbsp;
         <!-- Display list of all accounts for this username -->
         <% if @my_accounts %>
-            <% @my_accounts.each do |accounts| %>
-                <select id="to_account_id">
-                  <option> <%= User.find_by(id: accounts.user_id).name %>&nbsp&nbsp<%= accounts.id %> </option>
-                </select>
-            <%end %>
+            <%= f.collection_select :to_account_id, @my_accounts, :id , :id %>
         <% else %>
             N/A
         <% end %>
