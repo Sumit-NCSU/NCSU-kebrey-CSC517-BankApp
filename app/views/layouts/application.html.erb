@@ -10,14 +10,12 @@
 
 <body class="container">
 <div align="center"><%=image_tag('bank_banner.png', width: '50%', alt: 'banner')%></div>
-<nav class="navbar navbar-collapse collapse ">
+<hr>
   <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li class="nav-item <%= 'active' if current_page?(home_path)%>"><%= link_to image_tag('home_icon.png', size:'25x25', alt:'Home'), home_path, class: "nav-link" %></li>
-        <li class="nav-item <%= 'active' if current_page?(logout_path)%>"><%= link_to image_tag('power_button.png', size:'25x25', alt:'Logout'), logout_path, class: "nav-link" %></li>
-      </ul>
+     Home: <%= link_to image_tag('home_icon.png', size:'30x30', alt:'Home'), home_path %> &nbsp &nbsp
+     Logout: <%= link_to image_tag('power_button.png', size:'30x30', alt:'Logout'), logout_path %>
   </div>
-</nav>
+<hr>
 
 <%= yield %>
 </body>
