@@ -6,7 +6,8 @@
 
     <table class="table table-striped">
       <tr>
-        <th>Transaction Date</th>
+        <th>Start Date</th>
+        <th>Effective Date</th>
         <th>Transaction Type</th>
         <th>From Account</th>
         <th>To Account</th>
@@ -16,7 +17,8 @@
       </tr>
       <% @transactions.each do |transaction| %>
           <tr>
-            <td><%= transaction.effective_date %></td>
+            <td><%= transaction.created_at %></td>
+            <td><%= transaction.updated_at %></td>
             <td><%= transaction.txn_type %></td>
             <td><%= transaction.from_account_id %></td>
             <td><%= transaction.to_account_id %></td>
