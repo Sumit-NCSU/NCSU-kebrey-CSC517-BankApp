@@ -25,7 +25,7 @@
             <td><%= transaction.amount %></td>
             <td><%= transaction.status %></td>
             <% if transaction.status.downcase == 'pending' %>
-                <td><%= link_to 'Cancel', :controller => :transactions, :action => :destroy %></td>
+                <td><%= link_to 'Cancel',transaction, method: :delete %></td>
             <% else %>
                 <td>Completed</td>
             <% end %>
