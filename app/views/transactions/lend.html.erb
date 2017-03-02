@@ -1,4 +1,6 @@
-<h1>Send to a friend </h1>
+<h1>Transfer to another account <br><small> friend account or other personal account</small></h1>
+<br>
+<br>
 <% if !notice.nil? %>
     <hr>
     <h3 id="notice"><%= notice %></h3>
@@ -36,7 +38,8 @@
         <b>Select an account to send to: </b>&nbsp;&nbsp;&nbsp;&nbsp;
         <!-- Display list of friends account ids for form_account_id-->
         <% if @friends_accounts %>
-            <%= f.collection_select :to_account_id, @friends_accounts, :id , :id %>
+            <%= f.collection_select :to_account_id, @friends_accounts + @my_accounts , :id , :id %>
+                  <!--can check if the same account is selected for to and from -->
         <% else %>
             N/A
         <% end %>
