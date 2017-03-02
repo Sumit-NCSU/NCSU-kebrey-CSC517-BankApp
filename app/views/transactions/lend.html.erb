@@ -1,6 +1,5 @@
 <h1>Transfer to another account <br><small> friend account or other personal account</small></h1>
-<br>
-<br>
+<hr>
 <% if !notice.nil? %>
     <hr>
     <h3 id="notice"><%= notice %></h3>
@@ -52,10 +51,10 @@
       </div>
       <hr>
       <div class="actions">
-        <%= f.submit :value =>  'Send Request' %>
+        <%= f.submit :value =>  'Transfer Request', :class => 'btn btn-success btn-lg' %>
       </div>
 
   <% end %>
 </div>
 <br>
-<%= link_to 'Back', home_path %>
+<%= link_to image_tag('back_icon.png', size:'65x65', alt:'Back to Home'), home_path %>
