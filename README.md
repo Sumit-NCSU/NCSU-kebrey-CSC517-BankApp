@@ -6,7 +6,7 @@ CSC517-Object Oriented Design and Development
 
 Requirement Document: [Requirements](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/Requirements)
 
-How to user Guide: [How to Use](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/How-to-Use-our-Application)
+How to use Guide: [How to Use](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/How-to-Use-our-Application)
 
 Assumptions made in the Application: [Assumptions](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/Assumptions)
 
