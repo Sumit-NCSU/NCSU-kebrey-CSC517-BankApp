@@ -6,7 +6,7 @@ CSC517-Object Oriented Design and Development
 
 Production Deployment: [BankApplication](https://intense-garden-50741.herokuapp.com)
 
-Requirement Document: [Functionality](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/Requirements)
+Requirement Document: [Requirements](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/Requirements)
 
 How to use Guide: [How to Use](https://github.ncsu.edu/kebrey/CSC517-BankApp/wiki/How-to-Use-our-Application)
 
@@ -22,7 +22,7 @@ Assumptions made in the Application: [Assumptions](https://github.ncsu.edu/kebre
 
 Watch the below Video for instructions on how to use the application:
 
-[Demo of Program 1: Bank Application](https://youtu.be/R8wiwcZe0dQ "Demo of Program 1: Bank Application")
+[Demo of Program 1: Bank Application](https://youtu.be/T_EZLphO-RI "Demo of Program 1: Bank Application")
 
 
 * Ruby version 2.3.3
