@@ -1,9 +1,8 @@
 require 'test_helper'
 
 class TransactionTest < ActiveSupport::TestCase
-  def setup
-    @transaction = Transaction.new(txn_type: 'deposit', amount: 9.99, start_date: '2017-02-19 03:15:03',
-        effective_date: '2017-02-19 03:15:03', status: 'pending')
+  setup do
+    @transaction = transactions(:one)
   end
 
   test 'transaction should be valid' do

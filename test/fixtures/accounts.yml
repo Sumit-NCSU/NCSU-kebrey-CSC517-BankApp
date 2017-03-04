@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status: MyString
+  status: active
   balance: 9.99
   user: one
 
 two:
-  status: MyString
+  status: closed
   balance: 9.99
   user: two

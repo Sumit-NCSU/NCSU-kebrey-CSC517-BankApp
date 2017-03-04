@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  password: MyString
-  is_admin: false
+  name: user1
+  email: a1@b.com
+  password: password
+  is_admin: true
 
 two:
-  name: MyString
-  email: MyString
-  password: MyString
+  name: user2
+  email: a2@b.com
+  password: password
   is_admin: false

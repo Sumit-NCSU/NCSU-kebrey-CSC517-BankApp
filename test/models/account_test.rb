@@ -1,10 +1,9 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  def setup
-    @user = User.new(name: 'TestUser', email: 'testuser@gmail.com',
-                     password: 'password')
-    @account = Account.new(status: 'active', balance: 9.99, user: @user)
+  setup do
+    @user = users(:one)
+    @account = accounts(:one)
   end
 
   test 'account should be valid' do
@@ -13,6 +12,11 @@ class AccountTest < ActiveSupport::TestCase
 
   test 'account status should be valid' do
     @account.status = 'random'
+    assert_not @account.valid?
+  end
+
+  test 'balance should not be negative' do
+    @account.balance = -31
     assert_not @account.valid?
   end
 

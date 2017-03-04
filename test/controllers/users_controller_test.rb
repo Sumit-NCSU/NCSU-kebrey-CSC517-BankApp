@@ -5,8 +5,23 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @admin = users(:one)
     @user = users(:two)
   end
+
   test 'should get new user path' do
     get new_user_path
     assert_response :success
+  end
+
+  test 'should show user' do
+    get user_path(@user)
+    assert_response :success
+  end
+
+  test 'should destroy user' do
+    user = users(:one)
+    assert_difference('User.count', -1) do
+      delete user_path(user)
+    end
+
+    assert_redirected_to admins_path
   end
 end
