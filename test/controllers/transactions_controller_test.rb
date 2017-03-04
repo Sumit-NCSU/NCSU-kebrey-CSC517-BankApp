@@ -5,4 +5,9 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
     @transaction = transactions(:one)
   end
 
+  test 'should show transaction' do
+    get user_path(@transaction)
+    assert_response :success
+  end
+
 end

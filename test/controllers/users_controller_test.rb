@@ -24,4 +24,10 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to admins_path
   end
+
+  test "should get edit" do
+    user = users(:one)
+    get edit_user_path(user)
+    assert_response :success
+  end
 end
